@@ -1,5 +1,5 @@
 ---
-title: JS Mouse Event (mouseenter, mouseleave, mouseover, mouseout, mousebutton)
+title: JS Mouse Event (mouseenter, mouseleave, mouseover, mouseout)
 date: 2024-03-30 10:33:00 +09:00
 categories: [Development, JavaScript] # 메인 카테고리 , 보조 카테고리
 tags:
