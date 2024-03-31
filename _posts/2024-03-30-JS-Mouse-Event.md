@@ -5,6 +5,7 @@ categories: [Development, JavaScript] # 메인 카테고리 , 보조 카테고�
 tags:
   [
     Development,
+    Web,
     JavaScript,
   ]
 ---
