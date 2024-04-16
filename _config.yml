@@ -16,7 +16,7 @@ timezone: Asia/Seoul
 
 title: 나의 개발 일지 # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the sub-title
+tagline: 꾸준히 기록해가는 것의 의미 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A blog for code, development and myself 
