@@ -1,7 +1,7 @@
 ---
 title: To do list 기능 구현
 date: 2024-04-22 21:00:00 +09:00
-categories: [Development, Javascript] # 메인 카테고리 , 보조 카테고리
+categories: [Development, JavaScript] # 메인 카테고리 , 보조 카테고리
 tags: [Development, Web, JavaScript]
 ---
 
@@ -17,21 +17,21 @@ Momentum 이라는 크롬 확장 앱을 clone coding 하는 중인데, 여기서
 
 todos 라는 배열을 localstorage에 저장해서 할 일 목록을 만들었다.
 
-```Javascript
-    let todos = [];
+```javascript
+let todos = [];
 
-    function setToDo(event) {
-    event.preventDefault();
+function setToDo(event) {
+  event.preventDefault();
 
-    todos.push(toDoInput.value);
+  todos.push(toDoInput.value);
 
-    console.log(todos);
+  console.log(todos);
 
-    window.localStorage.setItem("todos", JSON.stringify(todos));
+  window.localStorage.setItem("todos", JSON.stringify(todos));
 
-    console.log(JSON.stringify(todos));
+  console.log(JSON.stringify(todos));
 
-    printToDo();
+  printToDo();
 }
 ```
 
@@ -39,7 +39,7 @@ todos 라는 배열을 localstorage에 저장해서 할 일 목록을 만들었�
 
 그러나, 그 뒤 이를 삭제하기 위해서 작성한 코드와 관련해 문제가 발생했다.
 
-```Javascript
+```javascript
 function deleteToDo(event) {
   // 버튼 click이 일어나면 remove
   const li = event.target.parentElement;
@@ -67,7 +67,7 @@ function deleteToDo(event) {
 
 변경한 코드는 다음과 같다.
 
-```Javascript
+```javascript
 function handleSubmit(event) {
   event.preventDefault();
 
@@ -77,7 +77,7 @@ function handleSubmit(event) {
 
   const newToDoObj = {
     id: Date.now(),
-    todo: todoValue,
+    todo: todoValue
   };
 
   todos.push(newToDoObj);
@@ -92,29 +92,28 @@ function setToDo() {
 
 다음으로, localstorage 에 저장한 할 일 목록을 화면에 출력해주는 `printToDo`함수를 작성했다.
 
-```Javascript
+```javascript
 function printToDo() {
+  let storedtodos = window.localStorage.getItem("todos"); // 여기서 문자열이 됨.
 
-    let storedtodos = window.localStorage.getItem("todos");// 여기서 문자열이 됨.
+  let splittodos = storedtodos.split(",");
+  // <ul> 내부에 <li> 을 추가해서 보여주는 형식.
+  Array.from(splittodos).forEach((element) => {
+    let item = document.createElement("li");
+    item.setAttribute("class", "to-do__item");
 
-    let splittodos = storedtodos.split(",");
-    // <ul> 내부에 <li> 을 추가해서 보여주는 형식.
-    Array.from(splittodos).forEach(element => {
-        let item = document.createElement("li");
-        item.setAttribute("class", "to-do__item");
+    let btn = document.createElement("button");
+    btn.setAttribute("class", "to-do__remove");
 
-        let btn = document.createElement("button");
-        btn.setAttribute("class", "to-do__remove");
+    let itemContent = document.createTextNode(element);
+    let btnContent = document.createTextNode("✖️");
 
-        let itemContent = document.createTextNode(element);
-        let btnContent = document.createTextNode("✖️");
+    btn.appendChild(btnContent);
+    item.appendChild(itemContent);
+    item.appendChild(btn);
 
-        btn.appendChild(btnContent);
-        item.appendChild(itemContent);
-        item.appendChild(btn);
-
-        toDoList.appendChild(item);
-    });
+    toDoList.appendChild(item);
+  });
 }
 ```
 
@@ -124,20 +123,19 @@ function printToDo() {
 게다가, `btn` 에 `"click"` event listener 를 추가하는 API 가 빠져있었다.
 그런데 기능은 또 잘 작동하길래 뭔가 싶어서 찾아보니,
 
-```Javascript
-const toDoBtn = document.querySelectorAll(".to-do\_\_remove"); // Node"List" 반환.
+```javascript
+const toDoBtn = document.querySelectorAll(".to-do__remove"); // Node"List" 반환.
 
 toDoBtn.forEach((element) => {
-    element.addEventListener("click", deleteToDo);
+  element.addEventListener("click", deleteToDo);
 });
-
 ```
 
 맨 아래에 이렇게 따로 빼 놓은 것을 발견해, `printToDo` 함수에 넣어준뒤 마지막에 forEach 를 적용하는 방식으로 변경했다.
 
 추가로, todos 배열이 단순 할 일 목록을 받는 것에서 id 를 추가한 객체를 갖는 배열로 바뀌면서 item 에 id attribute 를 설정하고, itemContent 변수 또한 변경이 생겼다.
 
-```Javascript
+```javascript
 function printToDo(todos) {
   // <ul> 내부에 <li> 을 추가해서 보여주는 형식.
   // list item 생성
@@ -164,7 +162,7 @@ function printToDo(todos) {
 
 내용을 삭제하는 `deleteToDo` 함수는 다음과 같이 변경했다.
 
-```Javascript
+```javascript
 function deleteToDo(event) {
   // 버튼 click이 일어나면 remove
   const li = event.target.parentElement;

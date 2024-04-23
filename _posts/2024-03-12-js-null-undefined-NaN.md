@@ -10,10 +10,10 @@ tags: [Development, JavaScript]
 시작은 typeof null 을 해보다가 object 라고 하길래 3가지를 다 비교해봤다.
 메모리에서 어떻게 존재하는 건지 궁금해서 찾아보았다.
 
-```Javascript
-  console.log(typeof null) // --> object
-  console.log(typeof undefined) // --> undefined
-  console.log(typeof NaN) // --> number
+```javascript
+console.log(typeof null); // --> object
+console.log(typeof undefined); // --> undefined
+console.log(typeof NaN); // --> number
 ```
 
 휴지걸이 예시를 통한 유머가 있는데, 일단 null 은 object type으로 나오는 것을 보니 stack 에 reference 값으로서 정의가 되는 것처럼 보인다. 다만 heap 영역에서 실제 참조하는 주소는 없다고 하니 stack 에서는 아무런 주소값도 가지고 있지 않을 것이다. → 휴지 걸이(stack)만 있고 휴지(heap)은 없는 예시
