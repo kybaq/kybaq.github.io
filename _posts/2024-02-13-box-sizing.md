@@ -2,29 +2,24 @@
 title: box-sizing:border-box; 에 대해
 date: 2024-02-13 23:11:00 +09:00
 categories: [Development, Web] # 메인 카테고리 , 보조 카테고리
-tags:
-  [
-    Development,
-    HTML,
-    CSS,
-  ]
+tags: [Development, HTML, CSS]
 ---
 
 클론코딩 강의를 수강하면서 얻은 magic line 2줄에 대해 정리했다
 
-  ```CSS
-    .nav {
-      background-color: #f9f9fa;
-      padding: 20px 50px;
-      position: fixed;
-      border-top: 1px solid rgba(128, 128, 128, 0.3);
-    }
-    
-    /*
-    width: 100%;
-    box-sizing:border-box;
-    */
-  ```
+```css
+.nav {
+  background-color: #f9f9fa;
+  padding: 20px 50px;
+  position: fixed;
+  border-top: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+/*
+  width: 100%;
+  box-sizing:border-box;
+  */
+```
 
 위와 같은 nav 를 화면에 고정시키고 싶을 때, position: fixed; 만 사용하면 nav 의 요소들이 갑자기 위치가 바뀔 때가 있다.
 

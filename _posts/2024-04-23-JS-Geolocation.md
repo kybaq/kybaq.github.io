@@ -1,8 +1,8 @@
 ---
 title: JS Geolocation API 사용해 현재 위치 불러오기
 date: 2024-04-23 21:00:00 +09:00
-categories: [Development, Javascript] # 메인 카테고리 , 보조 카테고리
-tags: [Development, Web, Javascript]
+categories: [Development, JavaScript] # 메인 카테고리 , 보조 카테고리
+tags: [Development, Web, JavaScript]
 ---
 
 ## 목적
@@ -21,7 +21,7 @@ mdn 문서의 설명을 가져왔다.
 
 mdn 예제를 보자.
 
-```Javascript
+```javascript
 navigator.geolocation.getCurrentPosition((position) => {
   doSomething(position.coords.latitude, position.coords.longitude);
 });
@@ -44,19 +44,19 @@ coords 속성이 있고, 위도와 경도 정보 등 다양한 것들이 함께 
 
 4. 직접 사용
 
-```Javascript
+```javascript
 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${API_KEY}`;
 
-  fetch(weatherUrl)
-    .then((res) => res.json())
-    .then((data) => {
-      const weatherDiv = document.querySelector(".weather");
-      const temperature = data["temp"];
+fetch(weatherUrl)
+  .then((res) => res.json())
+  .then((data) => {
+    const weatherDiv = document.querySelector(".weather");
+    const temperature = data["temp"];
 
-      console.log(data);
+    console.log(data);
 
-      weatherDiv.innerText = `${temperature} 입니다.`;
-    });
+    weatherDiv.innerText = `${temperature} 입니다.`;
+  });
 ```
 
 처음에는 url 을 `https://api.openweathermap.org/data/3.0/onecall?` 이렇게 했더니, 결제 해야한다고 오류가 뜨더라...
@@ -67,7 +67,7 @@ const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&l
 
 온도를 얻기 위해서는, main 속성을 찾아서, temp 변수를 찾아가야했다.
 
-```Javascript
+```javascript
 function success(position) {
   // 날씨 표현
   const lat = position.coords.latitude;
