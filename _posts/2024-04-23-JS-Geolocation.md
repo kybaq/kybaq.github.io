@@ -2,7 +2,7 @@
 title: JS Geolocation API 사용해 현재 위치 불러오기
 date: 2024-04-23 21:00:00 +09:00
 categories: [Development, Javascript] # 메인 카테고리 , 보조 카테고리
-tags: [Development, Web, JavaScript]
+tags: [Development, Web, Javascript]
 ---
 
 ## 목적
