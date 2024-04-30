@@ -1,9 +1,9 @@
----
+<!-- ---
 title: Cross-Origin Read Blocking(CORB) 해결
 date: 2024-04-26 21:00:00 +09:00
 categories: [Development, JavaScript] # 메인 카테고리 , 보조 카테고리
 tags: [Development, Web, JavaScript]
----
+--- -->
 
 ## 목적
 
