@@ -108,3 +108,10 @@ fetch(url, options)
     나는 cross-origin 에 해당하는데, 동시에 프로토콜 보안 수준이 다르기 때문인지(http 환경) 제대로 response 를 받아올 수 없는 것 같았다.
 
     [1]: https://www.chromium.org/Home/chromium-security/corb-for-developers/
+
+    ***
+
+    추가,  
+    내가 잘못된 url 로 요청을 보내고 있었다.  
+    img 를 제공해주는 url 로 요청을 보내니, 다른 origin(live server 환경) 에서도 잘 받아지는 것을 확인 했다.  
+    덕분에 cors 에 대한 공부는 조금 해보았으니 다행일지도?
