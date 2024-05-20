@@ -1,6 +1,6 @@
 ---
 title: 24/05/20 React 가상 DOM 에 대해(토막글)
-date: 2024-05-16 21:00:00 +09:00
+date: 2024-05-20 21:00:00 +09:00
 categories: [Development, React] # 메인 카테고리 , 보조 카테고리
 tags: [Development, React, JavaScript]
 ---
