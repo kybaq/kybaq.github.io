@@ -5,7 +5,7 @@ categories: [Development, React] # 메인 카테고리 , 보조 카테고리
 tags: [Development, React, JavaScript]
 ---
 
-# 목적
+## 목적
 
 리액트에서, `setState()` 를 여러번 사용해서 작업을 처리하려고 했더니 한 번만 적용이 되길래 찾아보았다.
 
