@@ -27,9 +27,11 @@ const App = () => {
           setCount(count + 1);
           setCount(count + 1);
           setCount(count + 1);
+          console.log(`count: ${count}`);
           setCount((prev) => prev + 1);
           setCount((prev) => prev + 1);
           setCount((prev) => prev + 1);
+          console.log(`count: ${count}`);
         }}
       >
         클릭
@@ -39,9 +41,12 @@ const App = () => {
 };
 ```
 
-위 코드를 작성했는데, 내가 예상한 결과는 한 번에 6씩 증가할 것이라 생각했다.
-하지만, 클릭 한 번에 4씩 증가했다.
+위 코드를 작성했는데, 먼저 내가 예상한 결과는 `console.log()` 에는 3 씩 증가하면서 `count` 가 표현될 줄 알았으나, 0이 출력되었다. 그리고 count 가 증가하는 차이는 6씩 증가할 것이라 생각했다. 하지만, 클릭 한 번에 4씩 증가했다.
 
+그래서 찾아보니, `setState()` 는 비동기로 동작한다는 사실을 알았다.
+그러니 console.log() 가 갱신 전의 state 를 출력할 수 밖에 없지!
+
+다음으로는, 왜 6이 아니고 4씩 증가했느냐였다.
 주석을 하나 씩 처리하면서 확인해보니, 함수 형태로 사용할 때만 `setState` 를 여러 번 호출하는 것이 가능했다.
 일반적으로, 리액트가 `setState` 를 처리할 때 효율성을 위해 상태가 변한 것들을 한 번에 갱신을 시키기 때문이란다.
 setCount(count + 1)` 처럼 작성했을 경우에는 여러 번 작성하면 동일한 행동을 단 한 번만 적용하도록 바꿔서 생기는 현상이라는 것을 알았다.
