@@ -239,5 +239,3 @@ function Layout({ children }) {
 ```
 
 이렇게 구현해주면, path 에 따라 children 이 달라지더라도 문제없이 렌더링이 가능해진다!
-
-이것들을 활용해보도록 하자.
