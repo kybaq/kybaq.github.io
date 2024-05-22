@@ -19,7 +19,7 @@ title: 나의 개발 일지 # the main title
 tagline: 꾸준히 기록해가는 것의 의미 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A blog for code, development and myself 
+  A blog for code, development and myself
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -28,8 +28,8 @@ url: "https://kybaq.github.io"
 github:
   username: kybaq # change to your github username
 
-twitter:
-  # username: twitter_username # change to your twitter username
+# twitter:
+# username: twitter_username # change to your twitter username
 
 social:
   # Change to your full name.
@@ -96,6 +96,9 @@ social_preview_image: # string, local or CORS resources
 
 # boolean type, the global switch for TOC in posts.
 toc: true
+
+# 불리언 값 사용, 포스팅에 기록한 날짜가 현재 시간보다 앞서더라도 글을 표시할지 여부 선택.
+future: true
 
 comments:
   # Global switch for the post comment system. Keeping it empty means disabled.
