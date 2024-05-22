@@ -5,7 +5,7 @@ categories: [Development, React] # 메인 카테고리 , 보조 카테고리
 tags: [Development, React, JavaScript]
 ---
 
-# 목적
+## 목적
 
 > 이제 라우팅을 도입해 리액트로 간단한 프로젝트를 도전해보려고 한다. 그래서, 까먹으면 찾아오려고 작성해본다. 물론, 캠프 과제부터..!
 
