@@ -55,9 +55,9 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/works" element={<Works />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="works" element={<Works />} />
       </Routes>
     </BrowserRouter>
   );
@@ -179,7 +179,7 @@ export default Home;
 
 정말 `a` 태그로 바뀌어 있다!
 
-## `children`
+## `children` 와 동적라우팅
 
 리액트의 props 에 대해 다룰 때, 살펴본 적 있었다.
 컴포넌트에 자식 요소가 존재하긴 하지만, 동적으로 구성되는 상황에 사용할 수 있다.
@@ -201,9 +201,9 @@ function Router() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/works" element={<Works />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="works" element={<Works />} />
         </Routes>
       </Layout>
     </BrowserRouter>
@@ -217,7 +217,7 @@ export default Router;
 `Layout` 컴포넌트를 추가한 이유는,
 `Routes` 는 path 에 따라 동적으로 변화하는 부분이다.
 
-이때, 다양한 `Route` 중 어떤 것이 들어오더라도 웹 페이지가 동작하도록 만들기 위해서 `Layout` 컴포넌트에서 `children` 이라는 형태로 props 를 받아주도록 만들었다.
+이때, 다양한 `Route` 중 어떤 것이 들어오더라도 웹 페이지가 동작하도록 만들기 위해서 `Layout` 컴포넌트에서 `Header` 와 `Footer` 사이 `children` 이라는 형태로 props 를 받아주도록 만들었다.
 
 ```jsx
 // Layout.jsx
@@ -239,3 +239,129 @@ function Layout({ children }) {
 ```
 
 이렇게 구현해주면, path 에 따라 children 이 달라지더라도 문제없이 렌더링이 가능해진다!
+
+## useParams()
+
+동적 라우팅에서, `/path` 에 따라 다른 컴포넌트를 보여주도록 만들었는데 이렇게도 설정이 가능하다.
+`path="/works"` 부분을 유심히 보자.
+
+```jsx
+// Router.jsx
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import Works from "../pages/Works";
+
+function Router() {
+  return (
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="works:id" element={<Works />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  );
+}
+
+export default Router;
+```
+
+`:id` 라는 부분이 더 생겼다.
+한 path 내에서, 동적으로 달라지는 것 또한 처리하기 위해서 이렇게 사용할 수 있다.
+그때, 저 id 값이 어떤 값이 들어오는지 직접 확인도 가능하다.
+
+```jsx
+import React from "react";
+import { Link, useParams } from "react-router-dom";
+
+function Detail({ path }) {
+  const params = useParams();
+  console.log(params);
+  console.log(`params.id: ${params.id}`);
+
+  return (
+    <div>
+      <h1>Detail</h1>
+      <span>{path}</span>
+      <Link to="/">Goes to Home</Link>
+    </div>
+  );
+}
+
+export default Detail;
+```
+
+![params 살펴보기](../assets/img/posts/240522-React-router-dom-hooks-4.png)
+
+이렇게 어떤 url parameter 가 들어왔는지 알 수 있다!
+
+## Outlet
+
+아래 동적 라우팅 예시에서, 동적 라우팅으로 처리한 path 내에서 또 동적 라우팅이 필요할 수 있다.
+이때, Outlet 을 이용해 처리할 수 있다.
+
+예를 들면, `/about` 하위 경로로 `dashboard` 컴포넌트를 연결시킨다고 가정해보자.
+
+```jsx
+// Router.jsx
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import Works from "../pages/Works";
+import Dashboard from "../pages/Dashboard";
+
+function Router() {
+  return (
+    <BrowserRouter>
+      <Layout>
+        {/* ✨ Layout! */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />}>
+            <Route path="dashboard" element={<Dashboard />} />
+          </Route>
+          <Route path="contact" element={<Contact />} />
+          <Route path="works:id" element={<Works />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  );
+}
+
+export default Router;
+```
+
+`Router` 에서 Route 하위의 Route 를 만들어 준뒤, `about` 컴포넌트에서는 다음과 같이 수정해줘야 한다.
+
+```jsx
+import React from "react";
+import { useLocation, useNavigate, Outlet } from "react-router-dom";
+
+function About() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  return (
+    <div>
+      <h1>About</h1>
+      <p>현재 페이지: {location.pathname}</p>
+      <button onClick={() => navigate("/")}>Home 으로 가기</button>
+      <Outlet />
+      {/* ✨ Outlet 이 추가되었다.*/}
+    </div>
+  );
+}
+
+export default About;
+```
+
+이 `Outlet` 을 이용하면, `about` 컴포넌트의 하위 경로인 `/about/dashboard` 로 이동해도 `about` 컴포넌트 내부에 `dashboard` 가 잘 표현되는 것을 확인할 수 있다!
+
+끝!
