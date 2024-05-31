@@ -5,7 +5,7 @@ categories: [Development, React] # 메인 카테고리 , 보조 카테고리
 tags: [Development, React, JavaScript]
 ---
 
-# 목적
+## 목적
 
 리액트에 대해 여러 가지 hook(useState, useEffect, useRef, useContext)을 이용하면서,  
 리액트는 State 의 변경에 따른 리렌더링이 핵심이라는 것을 알게되었다.
@@ -73,7 +73,7 @@ export default App;
 최상위 부모인 `App` 컴포넌트의 코드다.
 자식 컴포넌트인 `Box1`,`Box2`, `Box3` 는 부모 컴포넌트의 상태가 바뀔 때 마다, 함께 리렌더링이 되고 있다.
 
-![렌더링](../assets/img/posts/240521-React-Memoization-1.png)
+![렌더링](../assets/img/posts/2024-05-21-React-Memoization-1.png)
 
 자식 컴포넌트는 아래와 같이 작성했다.
 
@@ -110,7 +110,7 @@ export default function Box1() {
 
 `export` 문을 외부에 따로 사용한 경우는 `export default React.memo(컴포넌트_이름)` 처럼 사용하면 된다.
 
-![렌더링](../assets/img/posts/240521-React-Memoization-2.png)
+![렌더링](../assets/img/posts/2024-05-21-React-Memoization-2.png)
 
 ### React.memo 의 문제점
 
@@ -149,7 +149,7 @@ export default React.memo(function Box1({ initCnt }) {
 });
 ```
 
-![렌더링](../assets/img/posts/240521-React-Memoization-3.png)
+![렌더링](../assets/img/posts/2024-05-21-React-Memoization-3.png)
 
 +, - 버튼을 누르거나, 초기화를 누르면 모두 리렌더링이 되는 문제가 있다.
 
@@ -172,13 +172,13 @@ const initCnt = useCallback(() => {
 <Box1 initCnt={initCnt} />;
 ```
 
-![렌더링](../assets/img/posts/240521-React-Memoization-4.png)
+![렌더링](../assets/img/posts/2024-05-21-React-Memoization-4.png)
 
 그런데, 사실 해결하지 못했다고 봐야한다.
 
 아래를 보자.
 
-![렌더링](../assets/img/posts/240521-React-Memoization-5.png)
+![렌더링](../assets/img/posts/2024-05-21-React-Memoization-5.png)
 
 현재 카운트는 5인 상태다.
 
@@ -193,7 +193,7 @@ const initCnt = useCallback(() => {
 
 이 코드는, 초기화가 이루어질 때 `cnt` 의 값을 출력해 줄 것이다.
 
-![렌더링](../assets/img/posts/240521-React-Memoization-6.png)
+![렌더링](../assets/img/posts/2024-05-21-React-Memoization-6.png)
 
 그런데, 0을 0으로 초기화 했다고 나오는 것이다.
 

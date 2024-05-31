@@ -118,7 +118,7 @@ function Home() {
 export default Home;
 ```
 
-![useNavigation 을 적용한 버튼](../assets/img/posts/240522-React-router-dom-hooks-1.gif)
+![useNavigation 을 적용한 버튼](../assets/img/posts/2024-05-22-React-router-dom-hooks-1.gif)
 
 ## `useLocation()`
 
@@ -147,7 +147,7 @@ export default Home;
 이렇게, location 을 콘솔에서 확인해보면 현재 페이지 내의 정보를 얻을 수 있다.  
 아직 이 정보가 어떤 것들인지는 잘 모르겠지만..! 추후 정리해보도록 하자.
 
-![location 객체](../assets/img/posts/240522-React-router-dom-hooks-2.png)
+![location 객체](../assets/img/posts/2024-05-22-React-router-dom-hooks-2.png)
 
 `pathname` 은 현재 링크 location이 필요할 때 유용할 것 같다.
 
@@ -175,7 +175,7 @@ function Home() {
 export default Home;
 ```
 
-![location 객체](../assets/img/posts/240522-React-router-dom-hooks-3.png)
+![location 객체](../assets/img/posts/2024-05-22-React-router-dom-hooks-3.png)
 
 정말 `a` 태그로 바뀌어 있다!
 
@@ -297,7 +297,7 @@ function Detail({ path }) {
 export default Detail;
 ```
 
-![params 살펴보기](../assets/img/posts/240522-React-router-dom-hooks-4.png)
+![params 살펴보기](../assets/img/posts/2024-05-22-React-router-dom-hooks-4.png)
 
 이렇게 어떤 url parameter 가 들어왔는지 알 수 있다!
 
