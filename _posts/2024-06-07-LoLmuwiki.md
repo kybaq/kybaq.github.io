@@ -1,14 +1,14 @@
 ---
 title: 24/06/07 LoLmuwiki 프로젝트 정리본
-date: 2024-05-27 19:00:00 +09:00
-categories: [Development, Supabase] # 메인 카테고리 , 보조 카테고리
-tags: [Development, Supabase]
+date: 2024-06-07 19:00:00 +09:00
+categories: [Development, Project] # 메인 카테고리 , 보조 카테고리
+tags: [Development, React]
 ---
 
 > 일주일 간 엄청 바빴다.
 > 휴일 3일 포함해 열심히 만들었지만, 이번에도 아쉬움만 남았다
 
-# 롤무위키
+## 롤무위키
 
 `슬기로운 게임생활을 위한 커뮤니티`
 
