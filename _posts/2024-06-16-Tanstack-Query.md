@@ -1,5 +1,5 @@
 ---
-title: 24/06/14 Tanstack Query 기본 사용법
+title: Tanstack Query 기본 사용법
 date: 2024-06-16 21:00:00 +09:00
 categories: [Development, React] # 메인 카테고리 , 보조 카테고리
 tags: [Development, React, Tanstack Query]
