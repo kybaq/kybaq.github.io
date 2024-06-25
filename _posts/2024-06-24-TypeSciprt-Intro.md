@@ -82,16 +82,16 @@ TypeScript 프로젝트 설정 파일이다.
 
     /* Bundler mode */
     "moduleResolution": "bundler",
+    "noEmit": true,
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    // "noEmit": true,
 
     /* JavaScript Support */
     // TypeScript 프로젝트에 JavaScript 파일 허용 여부
     "allowJs": true,
-    // JavaScript
     "checkJs": true,
+    "jsx": "react-jsx",
 
     /* Linting */
     // strict: 엄격한 타입 검사 옵션 활성화, 아래 옵션들이 활성화됨.
