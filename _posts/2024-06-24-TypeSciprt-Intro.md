@@ -1,6 +1,6 @@
 ---
 title: TypeScript 개요
-date: 2024-06-22 21:00:00 +09:00
+date: 2024-06-24 21:00:00 +09:00
 categories: [Development, TypeScript] # 메인 카테고리 , 보조 카테고리
 tags: [Development, TypeScript]
 ---
