@@ -1,6 +1,6 @@
 ---
 title: Next.js 개요
-date: 2024-06-24 21:00:00 +09:00
+date: 2024-07-01 21:00:00 +09:00
 categories: [Development, Next.js] # 메인 카테고리 , 보조 카테고리
 tags: [Development, Next.js]
 ---
