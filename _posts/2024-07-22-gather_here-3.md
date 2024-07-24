@@ -14,6 +14,6 @@ tags: [Development, React, 회고]
 
 다음으로는 개발 일정을 짜보았다.
 
-![데이터 베이스 관게도](../assets/img/posts/2024-07-22-gather_here-3-2.png)
+![프로젝트 개발 일정](../assets/img/posts/2024-07-22-gather_here-3-2.png)
 
 이후 캘린더 연동을 완료했고, 좁은 공간에 어떻게 표시할 수 있을지 생각해봐야겠다.
