@@ -1,5 +1,5 @@
 ---
-title: Gather here 4일차 정리
+title: Gather here - 4
 date: 2024-07-23 21:00:00 +09:00
 categories: [Development, Project] # 메인 카테고리 , 보조 카테고리
 tags: [Development, React, 회고]
