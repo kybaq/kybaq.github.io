@@ -71,7 +71,7 @@ const Chat = () => {
         }
       )
       .subscribe();
-  }, [supabase]);
+  }, [message]);
 };
 ```
 
