@@ -141,6 +141,8 @@ const openTalkSubscription = supabase
 
 `message` 를 새로 불러오는 역할은, `openTalkSubscription` 에서 담당하고 있으니 컴포넌트 마운트 시에 한 번만 로드하면 되는 문제였다!
 
-이렇게 수정하고 나니 다행스럽게도 무한 호출은 해결되었다.. 아주 다행이었다.
+이렇게 수정하고 나니 다행스럽게도 네트워크에서 폭발하는 것은 막을 수 있었다.
 
 ![무수하지 않은 fetch 요청](../assets/img/posts/2024-08-05-supabase-realtime-5-1.png)
+
+하지만 또 다른 어려움이 있었으니.. 이것은 다음 포스트에서 다루자.
