@@ -104,10 +104,8 @@ const ItEventCardShort: NextPage<EventsCardProps> = ({ post }) => {
 
         <LikeButton eventId={post.event_id} currentUser={currentUser} />
         </ul>
-)
-})
+) : null})
 }
-
 ```
 
 ## 참고 링크
