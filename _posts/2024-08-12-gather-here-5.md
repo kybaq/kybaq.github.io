@@ -1,6 +1,6 @@
 ---
 title: Gather here - 5
-date: 2024-08-10 21:00:00 +09:00
+date: 2024-08-12 21:00:00 +09:00
 categories: [Development, Project] # 메인 카테고리 , 보조 카테고리
 tags: [Development, React, 회고]
 ---
