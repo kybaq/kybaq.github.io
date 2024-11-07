@@ -1,8 +1,8 @@
 ---
 title: JavaScript 에는 왜 타입이 필요할까?
 date: 2024-11-07 21:00:00 +09:00
-categories: [Development, Project] # 메인 카테고리 , 보조 카테고리
-tags: [Development, React, 회고]
+categories: [Development, TIL] # 메인 카테고리 , 보조 카테고리
+tags: [Development, TypeScript]
 ---
 
 ![타입스크립트 교과서 사진, 출처: https://github.com/zerocho/ts-book](../assets/img/posts/2024-10-04-ts-book-1.png)
