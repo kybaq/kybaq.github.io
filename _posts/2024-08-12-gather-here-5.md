@@ -5,6 +5,8 @@ categories: [Development, Project] # 메인 카테고리 , 보조 카테고리
 tags: [Development, React, 회고]
 ---
 
+## `layout.tsx` 를 이용해 컴포넌트 마운트 수 줄이기
+
 전반적인 리팩토링을 진행했다.
 
 먼저 Chat, Calender 컴포넌트가 페이지 이동마다 새로 마운트 되고 있는 것이 비효율적이라 생각했다.
@@ -100,31 +102,13 @@ export default MainSideBar;
 
 아예 이렇게 컴포넌트로 분리하고 나니, 정말로 한 번만 마운트가 발생했다.
 
-컴포넌트 분리 전에는 아래와 같았다.
+컴포넌트 분리 전에는 매번 마운트가 발생했다.
 
-![페이지 이동마다 채팅이 마운트되는 모습 1](../assets/img/posts/2024-08-12-gather-here-5-1.png)
+![컴포넌트 분리 전후 마운트 수 비교](../assets/img/posts/2024-08-12-gather-here-5.gif)
 
-![페이지 이동마다 채팅이 마운트되는 모습 2](../assets/img/posts/2024-08-12-gather-here-5-2.png)
+layout 으로 분리하고 난 뒤에는 페이지를 계속 이동해도 마운트가 일어나지 않았다!
 
-![페이지 이동마다 채팅이 마운트되는 모습 3](../assets/img/posts/2024-08-12-gather-here-5-3.png)
-
-![페이지 이동마다 채팅이 마운트되는 모습 4](../assets/img/posts/2024-08-12-gather-here-5-4.png)
-
-총 4개의 페이지에 진입했는데, Strict Mode 에서 마운트가 8번 일어났다.
-
-layout 으로 분리하고 난 뒤에는 아래와 같았다.
-
-![페이지 이동마다 채팅이 마운트되는 모습 5](../assets/img/posts/2024-08-12-gather-here-5-5.png)
-
-![페이지 이동마다 채팅이 마운트되는 모습 6](../assets/img/posts/2024-08-12-gather-here-5-6.png)
-
-![페이지 이동마다 채팅이 마운트되는 모습 7](../assets/img/posts/2024-08-12-gather-here-5-7.png)
-
-![페이지 이동마다 채팅이 마운트되는 모습 8](../assets/img/posts/2024-08-12-gather-here-5-8.png)
-
-페이지를 계속 이동해도 마운트가 일어나지 않았다!
-
-그런데, gif 로 찍는 편이 더 나았겠다.. 하하
+## UI 와 비즈니스 로직 분리리
 
 다음으로는 채팅 부분의 비즈니스 로직을 커스텀 훅으로 분리해줬다!
 
