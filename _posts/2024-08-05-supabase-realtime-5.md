@@ -143,6 +143,6 @@ const openTalkSubscription = supabase
 
 이렇게 수정하고 나니 다행스럽게도 네트워크에서 폭발하는 것은 막을 수 있었다.
 
-![무수하지 않은 fetch 요청](../assets/img/posts/2024-08-05-supabase-realtime-5-1.png)
+![무수하지 않은 fetch 요청](../assets/img/posts/2024-08-05-supabase-realtime-5-1.gif)
 
 하지만 또 다른 어려움이 있었으니.. 이것은 다음 포스트에서 다루자.
