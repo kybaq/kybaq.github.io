@@ -1,6 +1,6 @@
 ---
 title: Vite 프로젝트 셋업 간단 정리
-date: 2024-01-18 21:00:00 +09:00
+date: 2025-02-13 21:00:00 +09:00
 categories: [Development] # 메인 카테고리 , 보조 카테고리
 tags: [TypeScript, Vite]
 ---
