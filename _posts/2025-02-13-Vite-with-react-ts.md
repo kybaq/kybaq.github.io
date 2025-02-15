@@ -26,7 +26,7 @@ $ npm create vite@latest my-vue-app -- --template react
 
 ## ESLint + Typescript 설정 + Prettier
 
-나는 권장 설정을 사용하고 있다. 
+나는 권장 설정을 사용하고 있다.
 
 물론 권장 설정에 포함된 내용들엔 일부 과거의 문법이나 내가 필요하지 않은 부분들이라 있어도 그만, 없어도 그만 이런 느낌이지만 다른 부분은 내가 사용하면서 놓치기 쉬운 것이라 생각했다.
 
