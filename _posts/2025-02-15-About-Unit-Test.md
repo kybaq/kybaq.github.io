@@ -2,7 +2,7 @@
 title: 자바스크립트의 유닛 테스트
 date: 2025-02-15 17:00:00 +09:00
 categories: [Development] # 메인 카테고리 , 보조 카테고리
-tags: [TypeScript, Vite]
+tags: [Unit Test]
 ---
 
 ## 유닛 테스트란?
