@@ -108,6 +108,8 @@ export default MainSideBar;
 
 layout 으로 분리하고 난 뒤에는 페이지를 계속 이동해도 마운트가 일어나지 않았다!
 
+![컴포넌트 분리 전후 마운트 수 비교](../assets/img/posts/2024-08-12-gather-here-5-2.gif)
+
 ## UI 와 비즈니스 로직 분리
 
 다음으로는 채팅 부분의 비즈니스 로직을 커스텀 훅으로 분리해줬다!
