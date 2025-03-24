@@ -1,8 +1,7 @@
 ---
 title: 블로그 이전 프로젝트 - 1
 date: 2025-03-23 11:00:00 +09:00
-categories: [Development, TypeScript] # 메인 카테고리 , 보조 카테고리
-tags: [Development, TypeScript]
+categories: [Blog Migration, Trivia] # 메인 카테고리 , 보조 카테고리
 ---
 
 ## 블로그
