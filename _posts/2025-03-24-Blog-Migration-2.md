@@ -1,7 +1,7 @@
 ---
 title: Astro 란 무엇인가? (블로그 이전 프로젝트 - 2)
 date: 2025-03-24 11:00:00 +09:00
-categories: [Blog Migration, React Router] # 메인 카테고리 , 보조 카테고리
+categories: [Blog Migration] # 메인 카테고리 , 보조 카테고리
 ---
 
 ## 목적
