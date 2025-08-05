@@ -27,25 +27,25 @@ tags: [Web]
 
 이때 URL 을 파싱하면서 해당 사이트가 이용하는 프로토콜(HTTP / HTTPS), 도메인, 경로를 파악한다.
 
-[URL 구조 이해하기](./2025-08-04-URL-Structure.md)
+[URL 구조 이해하기](posts/2025-08-04-URL-Structure.md)
 
 #### 2. DNS 조회
 
 사용자가 입력한 URL 에서 파악한 도메인 정보를 IP 로 변환하는 과정이다.  
 이를 위해, 도메인-IP 쌍의 목록을 저장하고 있는 DNS(Domain Name System)를 조회한다.
 
-[DNS 조회 과정 살펴보기](./2025-08-05-DNS-Query.md)
+[DNS 조회 과정 살펴보기](posts/2025-08-05-DNS-Query.md)
 
 #### 3. TCP Handshake / TLS Handshake(HTTPS only)
 
 원하는 사이트의 서버 IP 주소를 알아 냈으니, 이번엔 네트워크 연결 과정이다.  
 HTTP는 TCP/IP 기반의 통신으로, TCP Handshake 과정이 필요하다.
 
-[HTTP 통신 이해하기](./2025-08-06-What-is-HTTP.md)
+[HTTP 통신 이해하기](posts/2025-08-06-What-is-HTTP.md)
 
-[TCP Handshake 이해하기](./2025-08-06-What-is-TCP.md)
+[TCP Handshake 이해하기](posts/2025-08-06-What-is-TCP.md)
 
-[TLS 암호화란?](./2025-08-06-What-is-TLS.md)
+[TLS 암호화란?](posts/2025-08-06-What-is-TLS.md)
 
 #### 4. 클라이언트 측 HTTP 요청(request) 전송
 
@@ -63,7 +63,7 @@ HTTP 연결이 가능하다는 것을 확인했다면, 클라이언트 측에서
 
 클라이언트(브라우저)가 수신한 `.HTML` 형식의 파일을 읽어내고, 화면에 그려내기 위한 준비를 한다.
 
-[브라우저 렌더링 과정 이해하기](./2025-08-07-How-browsers-render.md)
+[브라우저 렌더링 과정 이해하기](posts/2025-08-07-How-browsers-render.md)
 
 #### 8. 리소스 로딩
 
